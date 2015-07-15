@@ -880,6 +880,12 @@ def windowUI(*args):
 		byFrame_40 = cmds.text(l="By Frame:")
 		byFrameField_40 = cmds.textField("byFrameField_40", en=False)
 	
+	# replace end frame with start frame if camera keyframes have same value
+	for i in range(1, len(allShots) + 1):
+		print "End frame [", cmds.textField("endFrameField_" + str(i), tx=True, query=True), "] for camera [", cmds.text("cameraName_" + str(i), query=True, l=True), "] got set to start frame [", cmds.textField("startFrameField_" + str(i), tx=True, query=True), "] (no difference between keys detected)"
+    		if cmds.keyframe(cmds.text("cameraName_" + str(i), query=True, l=True), time=(int(cmds.textField("startFrameField_" + str(i), tx=True, query=True)), int(cmds.textField("startFrameField_" + str(i), tx=True, query=True))), query=True, eval=True) == cmds.keyframe(cmds.text("cameraName_" + str(i), query=True, l=True), time=(int(cmds.textField("endFrameField_" + str(i), tx=True, query=True)), int(cmds.textField("endFrameField_" + str(i), tx=True, query=True))), query=True, eval=True):
+    			cmds.textField("endFrameField_" + str(i), tx=cmds.textField("startFrameField_" + str(i), tx=True, query=True), edit=True)
+	
 	
 	cmds.setParent("..")
 	cmds.separator(h=10, st='in')
