@@ -405,7 +405,9 @@ def windowUI(*args):
 		return
 	
 	global colourRamp
-	colourRamp = cmds.createNode('ramp', name="colourRamp")
+	if cmds.objExists("colourRamp") == False:
+		colourRamp = cmds.createNode('ramp', name="colourRamp")
+		
 	cmds.setAttr(colourRamp + '.colorEntryList[0].position', 0)
 	cmds.setAttr(colourRamp + '.colorEntryList[0].color', 1, 1, 1, type ="double3")
 	cmds.setAttr(colourRamp + '.colorEntryList[1].position', 1)
