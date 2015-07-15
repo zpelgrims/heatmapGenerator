@@ -884,7 +884,7 @@ def windowUI(*args):
 	for i in range(1, len(allShots) + 1):
 		print "End frame [", cmds.textField("endFrameField_" + str(i), tx=True, query=True), "] for camera [", cmds.text("cameraName_" + str(i), query=True, l=True), "] got set to start frame [", cmds.textField("startFrameField_" + str(i), tx=True, query=True), "] (no difference between keys detected)"
     		if cmds.keyframe(cmds.text("cameraName_" + str(i), query=True, l=True), time=(int(cmds.textField("startFrameField_" + str(i), tx=True, query=True)), int(cmds.textField("startFrameField_" + str(i), tx=True, query=True))), query=True, eval=True) == cmds.keyframe(cmds.text("cameraName_" + str(i), query=True, l=True), time=(int(cmds.textField("endFrameField_" + str(i), tx=True, query=True)), int(cmds.textField("endFrameField_" + str(i), tx=True, query=True))), query=True, eval=True):
-    			cmds.textField("endFrameField_" + str(i), tx=cmds.textField("startFrameField_" + str(i), tx=True, query=True), edit=True)
+    			cmds.textField("endFrameField_" + str(i), tx=cmds.textField("startFrameField_" + str(i), tx=True, query=True), edit=True, bgc=[0.5, 0.85, 0])
 	
 	
 	cmds.setParent("..")
@@ -902,7 +902,7 @@ def windowUI(*args):
 	cmds.menuItem( label='Zbrush Remesh')
 	cmds.menuItem( label='Heat Map')
 	
-	cmds.rampColorPort( node=colourRamp, width=372, height = 150)
+	cmds.rampColorPort( node=colourRamp, width=372, height = 125)
 	cmds.button("rampAttr", l="Select ramp attributes", w=370, al="center", c=selectColourRamp)
 	cmds.separator(h=10, st='in')
 	
@@ -920,7 +920,6 @@ def windowUI(*args):
 	cmds.button("resetButton", l="Reset to default values", w=370, al="center", c=windowUI)
 	
 	cmds.separator(h=10, st='in')
-	cmds.text("Note: This script is work in progress",ww=True, fn="smallPlainLabelFont")
 	cmds.text("Yet to implement: byFrame functionality",ww=True, fn="smallPlainLabelFont")
 	
 	cmds.showWindow("windowUI")
