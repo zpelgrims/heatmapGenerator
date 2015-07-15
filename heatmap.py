@@ -893,7 +893,10 @@ def windowUI(*args):
 	cmds.intSliderGrp("vertexMargin", l="Vertex margin: ", v=0, cw3=[105,40,200], min=0, max=5, fmx=50, f=True)
 	cmds.separator(h=10, st='in')
 	
-	cmds.button("floodButton", l="Flood base object vertices with a colour", w=370, al="center", c=floodButton)
+	cmds.rowColumnLayout(nc=2)
+	cmds.button("floodButton", l="Flood base object vertices with a colour", w=315, al="center", c=floodButton)
+	cmds.button("rampAttr", l="Select ramp attributes", w=315, al="center", c=selectColourRamp)
+	cmds.setParent("..")
 	cmds.separator(h=10, st='in')
 	
 	global rampPresets
@@ -903,16 +906,13 @@ def windowUI(*args):
 	cmds.menuItem( label='Heat Map')
 	
 	cmds.rampColorPort( node=colourRamp, width=372, height = 125)
-	cmds.button("rampAttr", l="Select ramp attributes", w=370, al="center", c=selectColourRamp)
+	
 	cmds.separator(h=10, st='in')
 	
 	# paint button
 	cmds.rowColumnLayout(nc=2)
 	cmds.button("paintButton", l="Start Painting", w=315, h = 40, al="center", c=executeButton)
-	
-	
 	cmds.button("exportVtxMap", en=False, l="Export vertex colour map", w=315, h = 40, al="center", c=vtxMapButton)
-	
 	cmds.setParent("..")
 
 	
@@ -920,6 +920,7 @@ def windowUI(*args):
 	cmds.button("resetButton", l="Reset to default values", w=370, al="center", c=windowUI)
 	
 	cmds.separator(h=10, st='in')
+	
 	cmds.text("Yet to implement: byFrame functionality",ww=True, fn="smallPlainLabelFont")
 	
 	cmds.showWindow("windowUI")
