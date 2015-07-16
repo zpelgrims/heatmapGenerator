@@ -884,8 +884,8 @@ def windowUI(*args):
 	
 	# replace end frame with start frame if camera keyframes have same value
 	for i in range(1, len(allShots) + 1):
-		print "End frame [", cmds.textField("endFrameField_" + str(i), tx=True, query=True), "] for camera [", cmds.text("cameraName_" + str(i), query=True, l=True), "] got set to start frame [", cmds.textField("startFrameField_" + str(i), tx=True, query=True), "] (no difference between keys detected)"
-    		if cmds.keyframe(cmds.text("cameraName_" + str(i), query=True, l=True), time=(int(cmds.textField("startFrameField_" + str(i), tx=True, query=True)), int(cmds.textField("startFrameField_" + str(i), tx=True, query=True))), query=True, eval=True) == cmds.keyframe(cmds.text("cameraName_" + str(i), query=True, l=True), time=(int(cmds.textField("endFrameField_" + str(i), tx=True, query=True)), int(cmds.textField("endFrameField_" + str(i), tx=True, query=True))), query=True, eval=True):
+		if cmds.keyframe(str(cmds.listRelatives(cmds.text("cameraName_" + str(i), query=True, l=True), parent=True)[0]), time=(int(cmds.textField("startFrameField_" + str(i), tx=True, query=True)), int(cmds.textField("startFrameField_" + str(i), tx=True, query=True))), query=True, eval=True) == cmds.keyframe(str(cmds.listRelatives(cmds.text("cameraName_" + str(i), query=True, l=True), parent=True)[0]), time=(int(cmds.textField("endFrameField_" + str(i), tx=True, query=True)), int(cmds.textField("endFrameField_" + str(i), tx=True, query=True))), query=True, eval=True):
+    			print "End frame [", cmds.textField("endFrameField_" + str(i), tx=True, query=True), "] for camera [", cmds.text("cameraName_" + str(i), query=True, l=True), "] got set to start frame [", cmds.textField("startFrameField_" + str(i), tx=True, query=True), "] (no difference between keys detected)"
     			cmds.textField("endFrameField_" + str(i), tx=cmds.textField("startFrameField_" + str(i), tx=True, query=True), edit=True, bgc=[0.5, 0.85, 0])
 	
 	
