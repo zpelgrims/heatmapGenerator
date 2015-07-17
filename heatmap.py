@@ -272,11 +272,15 @@ def invisibleColor(*args):
 	
 	if cmds.colorEditor(query=True, result=True):
 		invisibleColorValue = cmds.colorEditor(query=True, rgb=True)
-	
+		api.MGlobal.displayInfo("Selected colour: " + str(invisibleColorValue))
+	else:
+		invisibleColorValue = None
+		api.MGlobal.displayInfo("ColorEditor exited with success")
+		
 	return invisibleColorValue
-
-
-
+	
+	
+	
 		
 def rampPresetChange(*args):
 	
@@ -386,7 +390,9 @@ def floodButton(*args):
 	# call selectBaseObject function
 	
 	colourValue  = invisibleColor()
-	floodVertices(selectedObject, colourValue)
+	
+	if colourValue != None:
+		floodVertices(selectedObject, colourValue)
 		
 
 		
