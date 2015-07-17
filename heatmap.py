@@ -12,8 +12,9 @@ def selectFromScreenApi(selectedObject, vertexMargin):
 	#set selection mode to camera based
 	mel.eval('selectPref -useDepth true;')
 	
-	# switch to vertex selection mode
+	# switch to face selection mode
 	cmds.selectMode(component=True)
+	cmds.selectType( fc=True )
 	
 	#select from screen
 	activeView = OpenMayaUI.M3dView.active3dView()
@@ -22,7 +23,7 @@ def selectFromScreenApi(selectedObject, vertexMargin):
 	for i in range(vertexMargin):
 		cmds.GrowPolygonSelectionRegion()
 	
-	fromScreen = cmds.ls(selection=True, flatten=True)
+	fromScreen = cmds.ls(cmds.polyListComponentConversion( ff=True, tv=True ), flatten=True)
 	
 	#set selection mode back to normal
 	mel.eval('selectPref -useDepth false;')
