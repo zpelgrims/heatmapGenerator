@@ -442,7 +442,7 @@ def windowUI(*args):
 	cmds.setParent("..")
 	cmds.separator(h=10, st='in')
 	
-	
+	cmds.scrollLayout(horizontalScrollBarThickness=16, verticalScrollBarThickness=16, height=550)
 	
 	# camera select layout
 	cmds.rowColumnLayout(nc=8, cal=[(1,"left")], cw=[(1,20),(2,250),(3,80), (4,40), (5,80), (6,40), (7,80), (8,40)])
@@ -1111,7 +1111,7 @@ def windowUI(*args):
 		byFrame_60 = cmds.text(l="By Frame:")
 		byFrameField_60 = cmds.textField("byFrameField_60", en=False)
 		
-		
+	cmds.setParent("..")	
 	
 	# replace end frame with start frame if camera keyframes have same value
 	for i in range(1, len(allShots) + 1):
