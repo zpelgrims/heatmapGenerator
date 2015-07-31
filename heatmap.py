@@ -440,7 +440,6 @@ def windowUI(*args):
 	cmds.textField("baseObject")
 	cmds.button("baseObjectButton", l="Select", c=selectBaseObjectButton)
 	cmds.setParent("..")
-	cmds.separator(h=10, st='in')
 	
 	cmds.scrollLayout(horizontalScrollBarThickness=16, verticalScrollBarThickness=16, height=550)
 	
