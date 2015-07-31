@@ -158,7 +158,7 @@ def assignVertexColours(distanceDict, selectedObject):
 		newValue = (((distanceDict.values()[i] - minDistance) * NewRange) / OldRange)
 		
 		# sample colour at point in ramp
-		colourAtPoint = cmds.colorAtPoint(colourRamp, o="RGB",u = newValue, v = 0.5)
+		colourAtPoint = cmds.colorAtPoint("colourRamp", o="RGB",u = newValue, v = 0.5)
 		
 		# append colour values to api colour list
 		vertexColorList.append(colourAtPoint[0], colourAtPoint[1], colourAtPoint[2])
@@ -290,45 +290,45 @@ def rampPresetChange(*args):
 		
 		for i in range(2,4):
 			
-			cmds.removeMultiInstance(colourRamp + '.colorEntryList[' + str(i) + ']', b=True)
+			cmds.removeMultiInstance("colourRamp" + '.colorEntryList[' + str(i) + ']', b=True)
 		
-		cmds.setAttr(colourRamp + '.colorEntryList[0].color', 1, 0, 0, type ="double3")
-		cmds.setAttr(colourRamp + '.colorEntryList[0].position', 0)
+		cmds.setAttr("colourRamp" + '.colorEntryList[0].color', 1, 0, 0, type ="double3")
+		cmds.setAttr("colourRamp" + '.colorEntryList[0].position', 0)
 		
-		cmds.setAttr(colourRamp + '.colorEntryList[2].position', 0.5)
-		cmds.setAttr(colourRamp + '.colorEntryList[2].color', 1, 1, 1, type ="double3")
+		cmds.setAttr("colourRamp" + '.colorEntryList[2].position', 0.5)
+		cmds.setAttr("colourRamp" + '.colorEntryList[2].color', 1, 1, 1, type ="double3")
 		
-		cmds.setAttr(colourRamp + '.colorEntryList[1].position', 1)
-		cmds.setAttr(colourRamp + '.colorEntryList[1].color', 0, 0, 1, type ="double3")
+		cmds.setAttr("colourRamp" + '.colorEntryList[1].position', 1)
+		cmds.setAttr("colourRamp" + '.colorEntryList[1].color', 0, 0, 1, type ="double3")
 		
 	
 	if presetName == "Heat Map":
 		
-		cmds.setAttr(colourRamp + '.colorEntryList[4].color', 0.192, 0.024, 0.580, type ="double3")
-		cmds.setAttr(colourRamp + '.colorEntryList[4].position', 1.0)
+		cmds.setAttr("colourRamp" + '.colorEntryList[4].color', 0.192, 0.024, 0.580, type ="double3")
+		cmds.setAttr("colourRamp" + '.colorEntryList[4].position', 1.0)
 		
-		cmds.setAttr(colourRamp + '.colorEntryList[3].position', 0.75)
-		cmds.setAttr(colourRamp + '.colorEntryList[3].color', 0.533, 0.004, 0.710, type ="double3")
+		cmds.setAttr("colourRamp" + '.colorEntryList[3].position', 0.75)
+		cmds.setAttr("colourRamp" + '.colorEntryList[3].color', 0.533, 0.004, 0.710, type ="double3")
 		
-		cmds.setAttr(colourRamp + '.colorEntryList[2].position', 0.5)
-		cmds.setAttr(colourRamp + '.colorEntryList[2].color', 0.961, 0.329, 0.149, type ="double3")
+		cmds.setAttr("colourRamp" + '.colorEntryList[2].position', 0.5)
+		cmds.setAttr("colourRamp" + '.colorEntryList[2].color', 0.961, 0.329, 0.149, type ="double3")
 		
-		cmds.setAttr(colourRamp + '.colorEntryList[1].position', 0.25)
-		cmds.setAttr(colourRamp + '.colorEntryList[1].color', 0.976, 0.694, 0.016, type ="double3")
+		cmds.setAttr("colourRamp" + '.colorEntryList[1].position', 0.25)
+		cmds.setAttr("colourRamp" + '.colorEntryList[1].color', 0.976, 0.694, 0.016, type ="double3")
 		
-		cmds.setAttr(colourRamp + '.colorEntryList[0].position', 0)
-		cmds.setAttr(colourRamp + '.colorEntryList[0].color', 1, 1, 1, type ="double3")
+		cmds.setAttr("colourRamp" + '.colorEntryList[0].position', 0)
+		cmds.setAttr("colourRamp" + '.colorEntryList[0].color', 1, 1, 1, type ="double3")
 	
 	if presetName == "Custom":
 		
 		for i in range(0,4):
-			cmds.removeMultiInstance(colourRamp + '.colorEntryList[' + str(i) + ']', b=True)
+			cmds.removeMultiInstance("colourRamp" + '.colorEntryList[' + str(i) + ']', b=True)
 		
-		cmds.setAttr(colourRamp + '.colorEntryList[0].position', 0)
-		cmds.setAttr(colourRamp + '.colorEntryList[0].color', 1, 1, 1, type ="double3")
+		cmds.setAttr("colourRamp" + '.colorEntryList[0].position', 0)
+		cmds.setAttr("colourRamp" + '.colorEntryList[0].color', 1, 1, 1, type ="double3")
 
-		cmds.setAttr(colourRamp + '.colorEntryList[1].position', 1)
-		cmds.setAttr(colourRamp + '.colorEntryList[1].color', 0, 0, 0, type ="double3")
+		cmds.setAttr("colourRamp" + '.colorEntryList[1].position', 1)
+		cmds.setAttr("colourRamp" + '.colorEntryList[1].color', 0, 0, 0, type ="double3")
 
 	
 def selectBaseObject(selectedObject):
@@ -397,7 +397,7 @@ def floodButton(*args):
 
 		
 def selectColourRamp(*args):
-	cmds.select(colourRamp)
+	cmds.select("colourRamp")
 
 
 	
@@ -415,11 +415,11 @@ def windowUI(*args):
 	if cmds.objExists("colourRamp") == False:
 		colourRamp = cmds.createNode('ramp', name="colourRamp")
 		
-	cmds.setAttr(colourRamp + '.colorEntryList[0].position', 0)
-	cmds.setAttr(colourRamp + '.colorEntryList[0].color', 1, 1, 1, type ="double3")
-	cmds.setAttr(colourRamp + '.colorEntryList[1].position', 1)
-	cmds.setAttr(colourRamp + '.colorEntryList[1].color', 0, 0, 0, type ="double3")
-	cmds.setAttr(colourRamp + ".type", 1)
+	cmds.setAttr("colourRamp" + '.colorEntryList[0].position', 0)
+	cmds.setAttr("colourRamp" + '.colorEntryList[0].color', 1, 1, 1, type ="double3")
+	cmds.setAttr("colourRamp" + '.colorEntryList[1].position', 1)
+	cmds.setAttr("colourRamp" + '.colorEntryList[1].color', 0, 0, 0, type ="double3")
+	cmds.setAttr("colourRamp" + ".type", 1)
 
 	# create the window
 	if cmds.window("windowUI", exists=True):
@@ -914,7 +914,7 @@ def windowUI(*args):
 	cmds.menuItem( label='Zbrush Remesh')
 	cmds.menuItem( label='Heat Map')
 	
-	cmds.rampColorPort( node=colourRamp, width=372, height = 125)
+	cmds.rampColorPort( node="colourRamp", width=372, height = 125)
 	
 	cmds.separator(h=10, st='in')
 	
