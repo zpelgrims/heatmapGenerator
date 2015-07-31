@@ -288,7 +288,7 @@ def rampPresetChange(*args):
 	
 	if presetName == "Zbrush Remesh":
 		
-		for i in range(2,4):
+		for i in range(0,100):
 			
 			cmds.removeMultiInstance("colourRamp" + '.colorEntryList[' + str(i) + ']', b=True)
 		
@@ -321,7 +321,7 @@ def rampPresetChange(*args):
 	
 	if presetName == "Custom":
 		
-		for i in range(0,4):
+		for i in range(0,100):
 			cmds.removeMultiInstance("colourRamp" + '.colorEntryList[' + str(i) + ']', b=True)
 		
 		cmds.setAttr("colourRamp" + '.colorEntryList[0].position', 0)
