@@ -486,7 +486,26 @@ def windowUI(*args):
 	global checkBox_38, cameraName_38, startFrame_38, startFrameField_38, endFrame_38, endFrameField_38, byFrame_38, byFrameField_38
 	global checkBox_39, cameraName_39, startFrame_39, startFrameField_39, endFrame_39, endFrameField_39, byFrame_39, byFrameField_39
 	global checkBox_40, cameraName_40, startFrame_40, startFrameField_40, endFrame_40, endFrameField_40, byFrame_40, byFrameField_40
-	
+	global checkBox_41, cameraName_41, startFrame_41, startFrameField_41, endFrame_41, endFrameField_41, byFrame_41, byFrameField_41
+	global checkBox_42, cameraName_42, startFrame_42, startFrameField_42, endFrame_42, endFrameField_42, byFrame_42, byFrameField_42
+	global checkBox_43, cameraName_43, startFrame_43, startFrameField_43, endFrame_43, endFrameField_43, byFrame_43, byFrameField_43
+	global checkBox_44, cameraName_44, startFrame_44, startFrameField_44, endFrame_44, endFrameField_44, byFrame_44, byFrameField_44
+	global checkBox_45, cameraName_45, startFrame_45, startFrameField_45, endFrame_45, endFrameField_45, byFrame_45, byFrameField_45
+	global checkBox_46, cameraName_46, startFrame_46, startFrameField_46, endFrame_46, endFrameField_46, byFrame_46, byFrameField_46
+	global checkBox_47, cameraName_47, startFrame_47, startFrameField_47, endFrame_47, endFrameField_47, byFrame_47, byFrameField_47
+	global checkBox_48, cameraName_48, startFrame_48, startFrameField_48, endFrame_48, endFrameField_48, byFrame_48, byFrameField_48
+	global checkBox_49, cameraName_49, startFrame_49, startFrameField_49, endFrame_49, endFrameField_49, byFrame_49, byFrameField_49
+	global checkBox_50, cameraName_50, startFrame_50, startFrameField_50, endFrame_50, endFrameField_50, byFrame_50, byFrameField_50
+	global checkBox_51, cameraName_51, startFrame_51, startFrameField_51, endFrame_51, endFrameField_51, byFrame_51, byFrameField_51
+	global checkBox_52, cameraName_52, startFrame_52, startFrameField_52, endFrame_52, endFrameField_52, byFrame_52, byFrameField_52
+	global checkBox_53, cameraName_53, startFrame_53, startFrameField_53, endFrame_53, endFrameField_53, byFrame_53, byFrameField_53
+	global checkBox_54, cameraName_54, startFrame_54, startFrameField_54, endFrame_54, endFrameField_54, byFrame_54, byFrameField_54
+	global checkBox_55, cameraName_55, startFrame_55, startFrameField_55, endFrame_55, endFrameField_55, byFrame_55, byFrameField_55
+	global checkBox_56, cameraName_56, startFrame_56, startFrameField_56, endFrame_56, endFrameField_56, byFrame_56, byFrameField_56
+	global checkBox_57, cameraName_57, startFrame_57, startFrameField_57, endFrame_57, endFrameField_57, byFrame_57, byFrameField_57
+	global checkBox_58, cameraName_58, startFrame_58, startFrameField_58, endFrame_58, endFrameField_58, byFrame_58, byFrameField_58
+	global checkBox_59, cameraName_59, startFrame_59, startFrameField_59, endFrame_59, endFrameField_59, byFrame_59, byFrameField_59
+	global checkBox_60, cameraName_60, startFrame_60, startFrameField_60, endFrame_60, endFrameField_60, byFrame_60, byFrameField_60
 	
 
 	if len(allShots) >= 1:
@@ -889,6 +908,210 @@ def windowUI(*args):
 		endFrameField_40 = cmds.textField("endFrameField_40", it=int(cmds.shot(allShots[39], query=True, endTime = True)))
 		byFrame_40 = cmds.text(l="By Frame:")
 		byFrameField_40 = cmds.textField("byFrameField_40", en=False)
+		
+		
+		
+	if len(allShots) >= 41:
+		checkBox_41 = cmds.checkBox("checkBox_41", l="", value=1)
+		cameraName_41 = cmds.text("cameraName_41", l=cmds.shot(allShots[40], query=True, currentCamera = True))
+		startFrame_41 = cmds.text(l="Start Frame:  ")
+		startFrameField_41 = cmds.textField("startFrameField_41", it=int(cmds.shot(allShots[40], query=True, startTime = True)))
+		endFrame_41 = cmds.text(l="End Frame:")
+		endFrameField_41 = cmds.textField("endFrameField_41", it=int(cmds.shot(allShots[40], query=True, endTime = True)))
+		byFrame_41 = cmds.text(l="By Frame:")
+		byFrameField_41 = cmds.textField("byFrameField_41", en=False)
+	
+	if len(allShots) >= 42:
+		checkBox_42 = cmds.checkBox("checkBox_42", l="", value=1)
+		cameraName_42 = cmds.text("cameraName_42", l=cmds.shot(allShots[41], query=True, currentCamera = True))
+		startFrame_42 = cmds.text(l="Start Frame:  ")
+		startFrameField_42 = cmds.textField("startFrameField_42", it=int(cmds.shot(allShots[41], query=True, startTime = True)))
+		endFrame_42 = cmds.text(l="End Frame:")
+		endFrameField_42 = cmds.textField("endFrameField_42", it=int(cmds.shot(allShots[41], query=True, endTime = True)))
+		byFrame_42 = cmds.text(l="By Frame:")
+		byFrameField_42 = cmds.textField("byFrameField_42", en=False)
+	
+	if len(allShots) >= 43:
+		checkBox_43 = cmds.checkBox("checkBox_43", l="", value=1)
+		cameraName_43 = cmds.text("cameraName_43", l=cmds.shot(allShots[42], query=True, currentCamera = True))
+		startFrame_43 = cmds.text(l="Start Frame:  ")
+		startFrameField_43 = cmds.textField("startFrameField_43", it=int(cmds.shot(allShots[42], query=True, startTime = True)))
+		endFrame_43 = cmds.text(l="End Frame:")
+		endFrameField_43 = cmds.textField("endFrameField_43", it=int(cmds.shot(allShots[42], query=True, endTime = True)))
+		byFrame_43 = cmds.text(l="By Frame:")
+		byFrameField_43 = cmds.textField("byFrameField_43", en=False)
+	
+	if len(allShots) >= 44:
+		checkBox_44 = cmds.checkBox("checkBox_44", l="", value=1)
+		cameraName_44 = cmds.text("cameraName_44", l=cmds.shot(allShots[43], query=True, currentCamera = True))
+		startFrame_44 = cmds.text(l="Start Frame:  ")
+		startFrameField_44 = cmds.textField("startFrameField_44", it=int(cmds.shot(allShots[43], query=True, startTime = True)))
+		endFrame_44 = cmds.text(l="End Frame:")
+		endFrameField_44 = cmds.textField("endFrameField_44", it=int(cmds.shot(allShots[43], query=True, endTime = True)))
+		byFrame_44 = cmds.text(l="By Frame:")
+		byFrameField_44 = cmds.textField("byFrameField_44", en=False)
+	
+	if len(allShots) >= 45:
+		checkBox_45 = cmds.checkBox("checkBox_45", l="", value=1)
+		cameraName_45 = cmds.text("cameraName_45", l=cmds.shot(allShots[44], query=True, currentCamera = True))
+		startFrame_45 = cmds.text(l="Start Frame:  ")
+		startFrameField_45 = cmds.textField("startFrameField_45", it=int(cmds.shot(allShots[44], query=True, startTime = True)))
+		endFrame_45 = cmds.text(l="End Frame:")
+		endFrameField_45 = cmds.textField("endFrameField_45", it=int(cmds.shot(allShots[44], query=True, endTime = True)))
+		byFrame_45 = cmds.text(l="By Frame:")
+		byFrameField_45 = cmds.textField("byFrameField_45", en=False)
+	
+	if len(allShots) >= 46:
+		checkBox_46 = cmds.checkBox("checkBox_46", l="", value=1)
+		cameraName_46 = cmds.text("cameraName_46", l=cmds.shot(allShots[45], query=True, currentCamera = True))
+		startFrame_46 = cmds.text(l="Start Frame:  ")
+		startFrameField_46 = cmds.textField("startFrameField_46", it=int(cmds.shot(allShots[45], query=True, startTime = True)))
+		endFrame_46 = cmds.text(l="End Frame:")
+		endFrameField_46 = cmds.textField("endFrameField_46", it=int(cmds.shot(allShots[45], query=True, endTime = True)))
+		byFrame_46 = cmds.text(l="By Frame:")
+		byFrameField_46 = cmds.textField("byFrameField_46", en=False)
+	
+	if len(allShots) >= 47:
+		checkBox_47 = cmds.checkBox("checkBox_47", l="", value=1)
+		cameraName_47 = cmds.text("cameraName_47", l=cmds.shot(allShots[46], query=True, currentCamera = True))
+		startFrame_47 = cmds.text(l="Start Frame:  ")
+		startFrameField_47 = cmds.textField("startFrameField_47", it=int(cmds.shot(allShots[46], query=True, startTime = True)))
+		endFrame_47 = cmds.text(l="End Frame:")
+		endFrameField_47 = cmds.textField("endFrameField_47", it=int(cmds.shot(allShots[46], query=True, endTime = True)))
+		byFrame_47 = cmds.text(l="By Frame:")
+		byFrameField_47 = cmds.textField("byFrameField_47", en=False)
+	
+	if len(allShots) >= 48:
+		checkBox_48 = cmds.checkBox("checkBox_48", l="", value=1)
+		cameraName_48 = cmds.text("cameraName_48", l=cmds.shot(allShots[47], query=True, currentCamera = True))
+		startFrame_48 = cmds.text(l="Start Frame:  ")
+		startFrameField_48 = cmds.textField("startFrameField_48", it=int(cmds.shot(allShots[47], query=True, startTime = True)))
+		endFrame_48 = cmds.text(l="End Frame:")
+		endFrameField_48 = cmds.textField("endFrameField_48", it=int(cmds.shot(allShots[47], query=True, endTime = True)))
+		byFrame_48 = cmds.text(l="By Frame:")
+		byFrameField_48 = cmds.textField("byFrameField_48", en=False)
+	
+	if len(allShots) >= 49:
+		checkBox_49 = cmds.checkBox("checkBox_49", l="", value=1)
+		cameraName_49 = cmds.text("cameraName_49", l=cmds.shot(allShots[48], query=True, currentCamera = True))
+		startFrame_49 = cmds.text(l="Start Frame:  ")
+		startFrameField_49 = cmds.textField("startFrameField_49", it=int(cmds.shot(allShots[48], query=True, startTime = True)))
+		endFrame_49 = cmds.text(l="End Frame:")
+		endFrameField_49 = cmds.textField("endFrameField_49", it=int(cmds.shot(allShots[48], query=True, endTime = True)))
+		byFrame_49 = cmds.text(l="By Frame:")
+		byFrameField_49 = cmds.textField("byFrameField_49", en=False)
+	
+	if len(allShots) >= 50:
+		checkBox_50 = cmds.checkBox("checkBox_50", l="", value=1)
+		cameraName_50 = cmds.text("cameraName_50", l=cmds.shot(allShots[49], query=True, currentCamera = True))
+		startFrame_50 = cmds.text(l="Start Frame:  ")
+		startFrameField_50 = cmds.textField("startFrameField_50", it=int(cmds.shot(allShots[49], query=True, startTime = True)))
+		endFrame_50 = cmds.text(l="End Frame:")
+		endFrameField_50 = cmds.textField("endFrameField_50", it=int(cmds.shot(allShots[49], query=True, endTime = True)))
+		byFrame_50 = cmds.text(l="By Frame:")
+		byFrameField_50 = cmds.textField("byFrameField_50", en=False)
+	
+	if len(allShots) >= 51:
+		checkBox_51 = cmds.checkBox("checkBox_51", l="", value=1)
+		cameraName_51 = cmds.text("cameraName_51", l=cmds.shot(allShots[50], query=True, currentCamera = True))
+		startFrame_51 = cmds.text(l="Start Frame:  ")
+		startFrameField_51 = cmds.textField("startFrameField_51", it=int(cmds.shot(allShots[50], query=True, startTime = True)))
+		endFrame_51 = cmds.text(l="End Frame:")
+		endFrameField_51 = cmds.textField("endFrameField_51", it=int(cmds.shot(allShots[50], query=True, endTime = True)))
+		byFrame_51 = cmds.text(l="By Frame:")
+		byFrameField_51 = cmds.textField("byFrameField_51", en=False)
+	
+	if len(allShots) >= 52:
+		checkBox_52 = cmds.checkBox("checkBox_52", l="", value=1)
+		cameraName_52 = cmds.text("cameraName_52", l=cmds.shot(allShots[51], query=True, currentCamera = True))
+		startFrame_52 = cmds.text(l="Start Frame:  ")
+		startFrameField_52 = cmds.textField("startFrameField_52", it=int(cmds.shot(allShots[51], query=True, startTime = True)))
+		endFrame_52 = cmds.text(l="End Frame:")
+		endFrameField_52 = cmds.textField("endFrameField_52", it=int(cmds.shot(allShots[51], query=True, endTime = True)))
+		byFrame_52 = cmds.text(l="By Frame:")
+		byFrameField_52 = cmds.textField("byFrameField_52", en=False)
+	
+	if len(allShots) >= 53:
+		checkBox_53 = cmds.checkBox("checkBox_53", l="", value=1)
+		cameraName_53 = cmds.text("cameraName_53", l=cmds.shot(allShots[52], query=True, currentCamera = True))
+		startFrame_53 = cmds.text(l="Start Frame:  ")
+		startFrameField_53 = cmds.textField("startFrameField_53", it=int(cmds.shot(allShots[52], query=True, startTime = True)))
+		endFrame_53 = cmds.text(l="End Frame:")
+		endFrameField_53 = cmds.textField("endFrameField_53", it=int(cmds.shot(allShots[52], query=True, endTime = True)))
+		byFrame_53 = cmds.text(l="By Frame:")
+		byFrameField_53 = cmds.textField("byFrameField_53", en=False)
+	
+	if len(allShots) >= 54:
+		checkBox_54 = cmds.checkBox("checkBox_54", l="", value=1)
+		cameraName_54 = cmds.text("cameraName_54", l=cmds.shot(allShots[53], query=True, currentCamera = True))
+		startFrame_54 = cmds.text(l="Start Frame:  ")
+		startFrameField_54 = cmds.textField("startFrameField_54", it=int(cmds.shot(allShots[53], query=True, startTime = True)))
+		endFrame_54 = cmds.text(l="End Frame:")
+		endFrameField_54 = cmds.textField("endFrameField_54", it=int(cmds.shot(allShots[53], query=True, endTime = True)))
+		byFrame_54 = cmds.text(l="By Frame:")
+		byFrameField_54 = cmds.textField("byFrameField_54", en=False)
+	
+	if len(allShots) >= 55:
+		checkBox_55 = cmds.checkBox("checkBox_55", l="", value=1)
+		cameraName_55 = cmds.text("cameraName_55", l=cmds.shot(allShots[54], query=True, currentCamera = True))
+		startFrame_55 = cmds.text(l="Start Frame:  ")
+		startFrameField_55 = cmds.textField("startFrameField_55", it=int(cmds.shot(allShots[54], query=True, startTime = True)))
+		endFrame_55 = cmds.text(l="End Frame:")
+		endFrameField_55 = cmds.textField("endFrameField_55", it=int(cmds.shot(allShots[54], query=True, endTime = True)))
+		byFrame_55 = cmds.text(l="By Frame:")
+		byFrameField_55 = cmds.textField("byFrameField_55", en=False)
+	
+	if len(allShots) >= 56:
+		checkBox_56 = cmds.checkBox("checkBox_56", l="", value=1)
+		cameraName_56 = cmds.text("cameraName_56", l=cmds.shot(allShots[55], query=True, currentCamera = True))
+		startFrame_56 = cmds.text(l="Start Frame:  ")
+		startFrameField_56 = cmds.textField("startFrameField_56", it=int(cmds.shot(allShots[55], query=True, startTime = True)))
+		endFrame_56 = cmds.text(l="End Frame:")
+		endFrameField_56 = cmds.textField("endFrameField_56", it=int(cmds.shot(allShots[55], query=True, endTime = True)))
+		byFrame_56 = cmds.text(l="By Frame:")
+		byFrameField_56 = cmds.textField("byFrameField_56", en=False)
+	
+	if len(allShots) >= 57:
+		checkBox_57 = cmds.checkBox("checkBox_57", l="", value=1)
+		cameraName_57 = cmds.text("cameraName_57", l=cmds.shot(allShots[56], query=True, currentCamera = True))
+		startFrame_57 = cmds.text(l="Start Frame:  ")
+		startFrameField_57 = cmds.textField("startFrameField_57", it=int(cmds.shot(allShots[56], query=True, startTime = True)))
+		endFrame_57 = cmds.text(l="End Frame:")
+		endFrameField_57 = cmds.textField("endFrameField_57", it=int(cmds.shot(allShots[56], query=True, endTime = True)))
+		byFrame_57 = cmds.text(l="By Frame:")
+		byFrameField_57 = cmds.textField("byFrameField_57", en=False)
+	
+	if len(allShots) >= 58:
+		checkBox_58 = cmds.checkBox("checkBox_58", l="", value=1)
+		cameraName_58 = cmds.text("cameraName_58", l=cmds.shot(allShots[57], query=True, currentCamera = True))
+		startFrame_58 = cmds.text(l="Start Frame:  ")
+		startFrameField_58 = cmds.textField("startFrameField_58", it=int(cmds.shot(allShots[57], query=True, startTime = True)))
+		endFrame_58 = cmds.text(l="End Frame:")
+		endFrameField_58 = cmds.textField("endFrameField_58", it=int(cmds.shot(allShots[57], query=True, endTime = True)))
+		byFrame_58 = cmds.text(l="By Frame:")
+		byFrameField_58 = cmds.textField("byFrameField_58", en=False)
+	
+	if len(allShots) >= 59:
+		checkBox_59 = cmds.checkBox("checkBox_59", l="", value=1)
+		cameraName_59 = cmds.text("cameraName_59", l=cmds.shot(allShots[58], query=True, currentCamera = True))
+		startFrame_59 = cmds.text(l="Start Frame:  ")
+		startFrameField_59 = cmds.textField("startFrameField_59", it=int(cmds.shot(allShots[58], query=True, startTime = True)))
+		endFrame_59 = cmds.text(l="End Frame:")
+		endFrameField_59 = cmds.textField("endFrameField_59", it=int(cmds.shot(allShots[58], query=True, endTime = True)))
+		byFrame_59 = cmds.text(l="By Frame:")
+		byFrameField_59 = cmds.textField("byFrameField_59", en=False)
+	
+	if len(allShots) >= 60:
+		checkBox_60 = cmds.checkBox("checkBox_60", l="", value=1)
+		cameraName_60 = cmds.text("cameraName_60", l=cmds.shot(allShots[59], query=True, currentCamera = True))
+		startFrame_60 = cmds.text(l="Start Frame:  ")
+		startFrameField_60 = cmds.textField("startFrameField_60", it=int(cmds.shot(allShots[59], query=True, startTime = True)))
+		endFrame_60 = cmds.text(l="End Frame:")
+		endFrameField_60 = cmds.textField("endFrameField_60", it=int(cmds.shot(allShots[59], query=True, endTime = True)))
+		byFrame_60 = cmds.text(l="By Frame:")
+		byFrameField_60 = cmds.textField("byFrameField_60", en=False)
+		
+		
 	
 	# replace end frame with start frame if camera keyframes have same value
 	for i in range(1, len(allShots) + 1):
